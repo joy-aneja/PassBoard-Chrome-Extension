@@ -1,0 +1,413 @@
+<html>
+
+<head>
+    
+    <style>
+        
+        
+        kbd, .key {
+	display: inline;
+	display: inline-block;
+	min-width: 1em;
+	padding: .2em .3em;
+	font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif;
+    font-size: 19px;
+	text-align: center;
+	text-decoration: none;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+	border-radius: .3em;
+	border: none;
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+kbd[title], .key[title] {
+	cursor: help;
+}
+
+/* Dark style for display on light background. This is the default style. */
+kbd, kbd.dark, .dark-keys kbd, .key, .key.dark, .dark-keys .key {
+	background: rgb(80, 80, 80);
+	background: -moz-linear-gradient(top, rgb(60, 60, 60), rgb(80, 80, 80));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(60, 60, 60)), to(rgb(80, 80, 80)));
+	color: rgb(250, 250, 250);
+	text-shadow: -1px -1px 0 rgb(70, 70, 70);
+	-moz-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+	-webkit-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+	box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+}
+
+/* Light style for display on dark background. */
+kbd.light, .light-keys kbd, .key.light, .light-keys .key {
+	background: rgb(250, 250, 250);
+	background: -moz-linear-gradient(top, rgb(210, 210, 210), rgb(255, 255, 255));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(30,69,232)), to(rgb(14,29,255)));
+	/*color:  rgb(50, 50, 50);*/
+    color: rgb(250, 250, 250);
+	text-shadow: -1px -1px 0 rgb(70, 70, 70);
+    -moz-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+	-webkit-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+	box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+	/*-moz-box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+	-webkit-box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+	box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);*/
+}
+     /*   button {
+            background: #428BCA;
+            border: 2px solid;
+            border-color: #ffff;
+            border-radius: 10px;
+            color: #fff;
+            font-family: Sans-serif;
+            font-size: 15px;
+            height: 25px;
+            width: 30px;
+            line-height: 5px;
+            margin: 5px 5px;
+            text-align: center;
+            border: 0;
+            transition: all 0.3s ease 0s;
+        }
+        */
+    </style>
+<style>
+    text {
+            border: 1px dotted #000000; 
+    outline:0; 
+    height:1px; 
+    width: 1px; 
+        
+        }
+    
+    heading {
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+    
+    </style>
+    <heading><i>Pass</i>Board</heading>    
+    <hr>
+</head>
+
+<body>
+    <input type="checkbox" hidden id="chk">
+    <form>
+
+        <table cellpadding="4.5">
+            <tr>
+                <td>
+                    <kbd type="button"  id="1">a</kbd>
+                </td>
+                <td>
+                    <kbd type="button"  id=2>b</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=3>c</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=4>d</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=5>e</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=6>f</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=7>g</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=8>h</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=9>i</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=10>j</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=11>k</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=12>l</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=13>m</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=14>n</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=15>o</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=16>p</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=17>q</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=18>r</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=19>s</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=20>t</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=21>u</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=22>v</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=23>w</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=24>x</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=25>y</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=26>z</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=27>0</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=28>1</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=29>2</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=30>3</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=31>4</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=32>5</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=33>6</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=34>7</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=35>8</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=36>9</kbd>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding = "4.5">
+            <tr>
+                <td>
+                    <kbd type="button" onclick="bckspace()" id=73> &larr; Bck</kbd>
+                </td>
+                <td>
+                    <kbd type="button" onclick="toggle()" id=74> &uarr; Caps</kbd>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding = "4.5">
+
+            <tr>
+                <td>
+                    <kbd type="button"   id=37>~</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=38>`</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=39>!</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=40>@</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=41>#</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=42>$</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=43>%</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=44>^</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=45>*</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=46>&</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=47>(</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=48>)</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=49>-</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=50>_</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=51>+</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=52>=</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=53>{</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=54>[</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=55>}</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=56>]</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=57>|</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=58>\</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=59>;</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=60>:</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=61>"</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=62>'</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=63>
+                        <</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=64>,</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=65>></kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=66>.</kbd>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <kbd type="button"   id=67>?</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=68>/</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=69>fuck</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=70>this</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=71>shit</kbd>
+                </td>
+                <td>
+                    <kbd type="button"   id=72>again</kbd>
+                </td>
+            </tr>
+        </table>
+        <center>
+        <kbd type="button" class="light" id="75" onclick="clipboard()"> &#10004; Done
+        </kbd>
+        </center>
+
+    </form>
+
+    <input type="text" id="passwd" size="32" >
+    
+    
+
+
+    <script src = "sc1.js"></script>
+
+    
+    <script src="popup2.js"></script>
+    
+    
+   
+<!--
+
+    <script id="tg">
+        
+    </script>
+
+-->
+
+<!--
+    
+//        function clipboard(){
+//        var copyFrom = document.getElementById("passwd");
+//        copyFrom.focus();
+//         document.execCommand('SelectAll');
+//
+//    //Copy Content
+//    document.execCommand("Copy", false, null);
+//        }
+
+        /* var copyFrom = document.createElement("textarea");
+            copyFrom.contentEditable = true;
+            copyFrom.textContent = document.getElementById("sc1").stp;
+            console.log("the text selected is " + copyFrom.textContent);
+            var body = document.getElementsByTagName('body')[0];
+            body.contentEditable = true;
+            body.appendChild(copyFrom);
+            copyFrom.focus();
+            copyFrom.select();
+            document.execCommand('copy',true);
+            console.log("the text has been copied ");
+            body.removeChild(copyFrom); */
+        
+   
+
+
+-->
+
+
+</body>
+
+</html>
